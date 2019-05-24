@@ -1,0 +1,9 @@
+<launch>
+ <!-- Turtlesim Node-->
+  <node pkg="turtlesim" type="turtlesim_node" name="sim"/>
+ <!-- turtle_wit_motion node -->
+  <node pkg="turtle_wit_motion" type="teleop_turtle_joy" name="turtle_joy" output="screen">
+  </node>
+ <!-- turtle_wit_motion-->
+  <node pkg="turtle_wit_motion" type="turtle_wit_motion" name="wit_motion" output="screen"/>
+</launch>
