@@ -5,10 +5,10 @@
 
 int main(int argc, char** argv) {
     ros::init(argc, argv, "turtle_wit_motion");
-    ros::NodeHandle nod;
+    ros::NodeHandle nod("~");
     // TurtleWitMotion turtleWit();
     TurtleWitMotion turtleWitMotion(nod);
-    turtleWitMotion.openPort(nod);
+    turtleWitMotion.openPort();
     turtleWitMotion.dataRead();
     return 0;
 }

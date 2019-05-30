@@ -22,7 +22,7 @@ void TeleopTurtleJoy::teleopCallback(const sensor_msgs::Imu::ConstPtr& joy) {
     // ROS_INFO_STREAM("Turtle is moving");
 	geometry_msgs::Twist twist;
 	
-//  Displacement, yaw Angle, data not converted
+    //  Displacement, yaw Angle, data not converted
     if(-10>joy->orientation.y>-90 || 90>joy->orientation.y >10) {
     twist.angular.z = joy->orientation.y/-10;
     }

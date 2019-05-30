@@ -3,12 +3,13 @@
   <node pkg="turtlesim" type="turtlesim_node" name="sim"/>
  <!-- turtle_wit_motion node -->
   <node pkg="turtle_wit_motion" type="teleop_turtle_joy" name="turtle_joy" output="screen">
+    <remap from="/read" to="/imu"/>
   </node>
  <!-- turtle_wit_motion-->
-  <!--param name="port" type="string" value="/dev/portlink"/-->
-    <param name="port" type="string" value="/dev/portlink"/>
   <node pkg="turtle_wit_motion" type="turtle_wit_motion" name="wit_motion" output="screen">
-  <param name="topic_read" value="read" type="string"/>
-  <param name="Baudrate" value="115200" type="int"/>
+    <param name="port" type="string" value="/dev/portlink"/>
+    <param name="topic_read" value="read" type="string"/>
+    <param name="Baudrate" value="115200" type="int"/>
+    <remap from="/wit_motion/read" to="/imu"/>
   </node>
 </launch>
